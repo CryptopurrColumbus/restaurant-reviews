@@ -210,11 +210,12 @@ nav h1 a {
   background-color: #ccc;
   height: 100%;
   width: 100%;
+  position: fixed;
 }
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -277,7 +278,10 @@ nav h1 a {
   width: 85%;
 }
 #reviews-list li p {
-  margin: 0 0 10px;
+  margin: 10px;
+}
+#reviews-list li p:nth-child(-n+3) {
+  font-weight: bold;
 }
 #restaurant-hours td {
   color: #666;
