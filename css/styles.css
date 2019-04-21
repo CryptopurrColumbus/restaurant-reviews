@@ -292,8 +292,46 @@ nav h1 a {
 
 /* For 365 x 667 screen */
 @media only screen and (max-width: 768px) {
-  /* Restaurant listing */
+  /* breadcrumb */
+  #map-container {
+    display: none;
+  }
+  #breadcrumb {
+    width: 100%;
+  }
+  #restaurant-cuisine {
+    width: 100%;
+  }
+  #restaurant-container{
+    width: 100%;
+    padding: 140px 0 0 0;
+  }
+  #reviews-container {
+    width: 100%;
+    padding: 6px 0 0 0;
+  }
+  #restaurant-hours {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #restaurant-address {
+    text-align: center;
+  }
+  #reviews-container h2 {
+    text-align: center;
+  }
+  #reviews-list li {
+    padding: 0 20px 20px 52px;
+    width: 80%;
+  }
+  #footer {
+    padding: 0;
+  }
 
+  /* Restaurant listing */
+  #restaurant-container h1 {
+    text-align: center;
+  }
   #restaurants-list {
     padding: 0px;
   }
