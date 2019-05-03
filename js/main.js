@@ -11,7 +11,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  registerServiceWorker();
 });
+
+/**
+ * Register the service worker script for offline experience
+ * credits: https://developers.google.com/web/fundamentals/primers/service-workers/
+ */
+registerServiceWorker = () => {
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+  }
+}
+
 
 /**
  * Fetch all neighborhoods and set their HTML.
