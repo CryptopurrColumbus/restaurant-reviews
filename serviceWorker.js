@@ -47,7 +47,6 @@ self.addEventListener('install', function(event) {
 fetchFromServer = (request) => {
   fetch(request).then(
     function(response) {
-      console.log("coming in fetch from server")
       if(!response || response.status !== 200 || response.type !== 'basic') {
         return response;
       }
@@ -62,14 +61,11 @@ fetchFromServer = (request) => {
 setCacheAfterFetch = (request, response) => {
     var requestUrl = new URL(request.url);
     var requestPath = requestUrl.pathname;
-    console.log(requestPath)
     var _cacheName = '';
     if (requestPath.startsWith('/img')) {
         _cacheName = 'restaurant-images'
-        console.log("coming in restaurant images")
       } else if (requestPath.startsWith('/js') || requestPath.startsWith('/css') || requestPath.startsWith('/restaurant.html') || requestPath.startsWith('/')) {
           _cacheName = 'static-files'
-        console.log("coming in static files")
     } 
     if (_cacheName) {
         caches.open(_cacheName)
